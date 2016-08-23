@@ -1,7 +1,14 @@
-<html ng-app="nameApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Angular.js Example</title>
+
+   <body ng-app="nameApp" ng-controller="NameCtrl">
+    <ul>
+      <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+    <form ng-submit="addName()">
+      <input type="text" ng-model="enteredName">
+      <input type="submit" value="add">
+    </form>
+    
+    <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
     <script>
       var nameApp = angular.module('nameApp', []);
@@ -14,14 +21,6 @@
         };
       });
     </script>
-  </head>
-  <body ng-controller="NameCtrl">
-    <ul>
-      <li ng-repeat="name in names">{{name}}</li>
-    </ul>
-    <form ng-submit="addName()">
-      <input type="text" ng-model="enteredName">
-      <input type="submit" value="add">
-    </form>
+    </script>
+    
   </body>
-</html>

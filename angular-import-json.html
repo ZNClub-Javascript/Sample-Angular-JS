@@ -1,1 +1,25 @@
 
+
+  <body ng-app="countryApp" ng-controller="CountryCtrl">
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+      <tr ng-repeat="country in countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script>
+      var countryApp = angular.module('countryApp', []);
+      countryApp.controller('CountryCtrl', function ($scope, $http){
+        $http.get('https://raw.githubusercontent.com/ZNClub-Javascript/Sample-Angular-JS/master/countries.json').success(function(data) {
+          $scope.countries = data;
+        });
+      });
+    </script>    
+    
+  </body>
+

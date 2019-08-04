@@ -1,0 +1,250 @@
+<!--
+  Generated template for the CampaignReviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+
+  <form>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-md-6>
+          <ion-row>
+            <ion-col col-6>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <h6 ion-text text-center text-uppercase color="text-secondary">Brand</h6>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <pyper-hover-image [text]="campaign.name" [src]="campaignProvider.temporaryCoverImageSrc"></pyper-hover-image>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <h6 ion-text text-center text-uppercase color="text-secondary">{{campaign.name}}</h6>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-6>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <h6 ion-text text-center text-uppercase color="text-secondary">Product</h6>
+
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <pyper-hover-image [text]="campaign.productName" [src]="campaignProvider.temporaryLogoImageSrc"></pyper-hover-image>
+
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6 offset-3>
+                  <h6 ion-text text-center text-uppercase color="text-secondary">{{campaign.productName}}</h6>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+          </ion-row>
+
+          <br><br>
+
+          <ion-row>
+            <ion-col col-6>
+              <h5 ion-text text-right text-uppercase color="text-primary">About Us</h5>
+            </ion-col>
+
+            <ion-col col-6>
+              <h5 ion-text text-justify color="text-secondary">{{campaign.productDescription}}</h5>
+            </ion-col>
+          </ion-row>
+
+          <br><br>
+
+          <ion-row>
+            <ion-col col-6>
+              <h5 ion-text text-right text-uppercase color="text-primary">Content we'd love to hear from you</h5>
+            </ion-col>
+
+            <ion-col col-6>
+              <h5 ion-text text-justify color="text-secondary">{{campaign.specification}}</h5>
+            </ion-col>
+          </ion-row>
+
+          <br><br>
+
+          <ion-row>
+            <ion-col col-6>
+              <h5 ion-text text-right text-uppercase color="text-primary">Dreamboard</h5>
+            </ion-col>
+
+            <ion-col col-6>
+              <h5 ion-text text-justify color="text-secondary">dreamboard images</h5>
+            </ion-col>
+          </ion-row>
+
+          <br><br>
+
+          <ion-row>
+            <ion-col col-6>
+              <h5 ion-text text-right text-uppercase color="text-primary">Where to get our products?</h5>
+            </ion-col>
+
+            <ion-col col-6>
+              <h5 ion-text text-justify color="text-secondary">{{campaign.productMarketInformation}}</h5>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-col>
+
+        <ion-col col-12 col-md-6> 
+
+          <ion-row *ngIf="isSocialMediaPresent()">
+            <ion-col col-12>
+              <h6 ion-text text-center text-uppercase color="primary">Platforms & tags</h6>
+            </ion-col>
+
+            <ion-col col-12>
+              <ion-row>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="fbhashtags" icon="logo-facebook" iconColor="facebookblue"></pyper-bullet-list>
+                </ion-col>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="fbmentions" icon="logo-facebook" iconColor="facebookblue"></pyper-bullet-list>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="instahashtags" icon="logo-instagram" iconColor="instagram"></pyper-bullet-list>
+                </ion-col>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="instamentions" icon="logo-instagram" iconColor="instagram"></pyper-bullet-list>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="twitterhashtags" icon="logo-twitter" iconColor="twitterblue"></pyper-bullet-list>
+                </ion-col>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="twittermentions" icon="logo-twitter" iconColor="twitterblue"></pyper-bullet-list>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="youtubehashtags" icon="logo-youtube" iconColor="youtube"></pyper-bullet-list>
+                </ion-col>
+                <ion-col col-6>
+                  <pyper-bullet-list [list]="youtubementions" icon="logo-youtube" iconColor="youtube"></pyper-bullet-list>
+                </ion-col>
+              </ion-row>
+
+
+
+            </ion-col>
+          </ion-row>
+          <br><br>
+          <ion-row *ngIf="campaign.dos?.length">
+            <ion-col col-12>
+              <h6 ion-text text-center text-uppercase color="primary">Do's</h6>
+            </ion-col>
+
+            <ion-col col-12 text-center>
+              <span *ngFor="let d of campaign.dos">
+                <pyper-bullet [text]="d" icon="checkmark" iconColor="success" isCloseEnabled="false"></pyper-bullet>
+              </span>
+            </ion-col>
+          </ion-row>
+          <br><br>
+          <ion-row *ngIf="campaign.donts?.length">
+            <ion-col col-12 >
+              <h6 ion-text text-center text-uppercase color="primary">Dont's</h6>
+            </ion-col>
+
+            <ion-col col-12 text-center>
+              <span *ngFor="let d of campaign.donts">
+                <pyper-bullet [text]="d" icon="close" iconColor="danger" isCloseEnabled="false"></pyper-bullet>
+              </span>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-col>
+
+        <ion-col col-12 col-md-6 offset-3 *ngIf="isInfluencer()">
+          <hr>
+          <br><br>
+          <ion-row>
+
+            <ion-col col-12>
+              <h5 ion-text text-center text-uppercase color="dark">Filters</h5>
+            </ion-col>
+            <br>
+            <ion-col col-12>
+              <ion-row>
+                <ion-col col-6>
+                  <h6 ion-text  text-uppercase color="text-primary">Age</h6>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-range min="0" max="100" [(ngModel)]="agegroup" [ngModelOptions]="{standalone:true}" dualKnobs="true"
+                    pin="true" color="dark">
+                    <ion-label range-left>0</ion-label>
+                    <ion-label range-right>100</ion-label>
+                  </ion-range>
+                </ion-col>
+
+              </ion-row>
+              <br>
+              <ion-row>
+                <ion-col col-6>
+                  <h6 ion-text  text-uppercase color="text-primary">Gender</h6>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-item>
+                    <ion-label for="male">Male</ion-label>
+                    <ion-checkbox [(ngModel)]="male" [ngModelOptions]="{standalone:true}"></ion-checkbox>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Female</ion-label>
+                    <ion-checkbox [(ngModel)]="female" [ngModelOptions]="{standalone:true}"></ion-checkbox>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <br>
+              <ion-row>
+                <ion-col col-6>
+                  <h6 ion-text  text-uppercase color="text-primary">Target Regions</h6>
+                </ion-col>
+                <ion-col col-6>
+                  <span *ngFor="let t of targetRegions">
+                    <pyper-bullet [text]="t" icon="pin" iconColor="divider" isCloseEnabled="false"></pyper-bullet>
+                  </span>
+                </ion-col>
+              </ion-row>
+              <br>
+              <ion-row *ngIf="campaign.filter?.interests.length">
+                <ion-col col-6>
+                  <h6 ion-text  text-uppercase color="text-primary">Interests</h6>
+                </ion-col>
+                <ion-col col-6>
+                  <span *ngFor="let i of interests">
+                    <pyper-bullet [text]="i" isCloseEnabled="false"></pyper-bullet>
+                  </span>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </form>
+
+</ion-content>

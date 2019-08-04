@@ -1,0 +1,64 @@
+page-login {
+    
+    .loginscreen{
+        height: 100%;
+    }
+
+    .logo{
+        object-fit:contain;
+        margin-top: 10%;
+    }
+    .non-logo{
+        .non-logo-grid {
+            margin-top: 5%;
+            padding: 0;
+            height: 100%;
+        }
+        ion-row {
+            
+            flex: 1;
+        }
+        form{
+            flex:1
+        }
+    }
+
+    .title-image {
+        margin-top: 8px;
+        height: 27px;
+    }
+
+    .maintext{
+        font-size:3em;
+        font-family:'Roboto Light'
+    }
+
+    .iframe-outer, .iframe-inner {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .iframe-outer {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .iframe-inner {
+        overflow: hidden;
+        border-radius: 5000px;
+        position: absolute;
+    }
+    
+        .iframe-inner iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+        .activeLink{
+            // color:black
+            border-radius: 32px;
+            padding:16px;
+        }
+
+    
+}

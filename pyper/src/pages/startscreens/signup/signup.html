@@ -1,0 +1,75 @@
+<!-- Themes  register-flat-->
+<ion-content *ngIf="signupTemplate != null" class="signupscreen">
+  <ion-grid no-padding no-margin class="signupscreen" align-items-stretch>
+    <!-- logo -->
+    <ion-row header align-items-start align-items-stretch  style="height:100%; ">
+      <ion-col col-12 col-md-6>
+        <img class="logo" src="{{signupTemplate.logo}}" />
+      </ion-col>
+
+      <!-- Section form>-->
+      <ion-col col-12 col-md-6 class="non-logo">
+        <ion-grid class="non-logo-grid">
+          <form padding novalidate [formGroup]="signupForm" >
+            <ion-grid class="non-logo-grid">
+              <ion-row align-items-start align-items center>
+              <!-- title -->
+              <ion-col col-12>
+                <h1 ion-text color="primary"><strong>{{signupTemplate.title}}</strong></h1>
+              </ion-col>
+
+              <!-- inputs -->
+              <ion-col col-12>
+                <div input-field>
+                  <!-- Input-field-text -->
+                  <ion-item no-padding>
+                    <ion-input type="text" [placeholder]="signupTemplate.txtemail" formControlName="email"></ion-input>
+                    <!-- [(ngModel)]="email" [ngModelOptions]="{standalone: true}" -->
+
+                  </ion-item>
+                  <p ion-text color="danger" *ngIf="!isemailValid()">{{signupTemplate.errorUser}}</p>
+
+                  <!-- Input-field-password -->
+                  <ion-item no-padding>
+                    <ion-input type="password" [placeholder]="signupTemplate.txtPassword" formControlName="password"></ion-input>
+
+                  </ion-item>
+                  <div padding class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+                    <p ion-text color="danger" *ngIf="password.errors.required">Password is required</p>
+                    <p ion-text color="danger" *ngIf="password.errors.minlength">Password must be 8 characters long</p>
+                  </div>
+                </div>
+
+              </ion-col>
+
+              <!-- signup button -->
+              <ion-col col-12 margin>
+                <button no-margin ion-button color="primary" round text-uppercase (click)="signUp()" [disabled]="this.email.invalid || this.password.invalid">{{signupTemplate.btnsignup}}</button>
+                <p ion-text color="danger" *ngIf="signUpError!=null">{{signUpError}}</p>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+
+          </form>
+          <ion-row align-items-center text-center>
+            <!-- Description -->
+            <div description >
+              <ion-row>
+                <!-- Reset your password button -->
+                <ion-col col-12 no-padding>
+                  <p no-margin no-padding>{{signupTemplate.txtForgotPassword}} <a (click)="goToForgotpasswordPage()">{{signupTemplate.btnResetYourPassword}}</a>
+                  </p>
+                </ion-col>
+                <!-- Signup now button -->
+                <ion-col col-12 no-padding>
+                  <p no-margin no-padding>{{signupTemplate.txtLogin}} <a (click)="goToLoginPage()">{{signupTemplate.btnLogin}}</a>
+                  </p>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,38 @@
+page-create {
+    
+    #main { 
+        width: 100%;
+        margin: 0 auto;
+    }
+    #sidebar    {
+        width: 50%;
+        height: 100%;
+        background: white;
+        margin-right: 0%;
+        float: left;
+    }
+    
+    #page-wrap  {
+        width: 50%;
+        float:left;
+        background: white;
+        height: 100%;
+        margin-left: 50%;
+    }
+    .mycontent-left {
+        border-left: 1px dashed #333;
+        border-color: #02A7FF;
+      }
+
+    .row{
+        margin: 0 auto;
+    }
+
+    #contentCampaign{
+        margin-left: 2rem;
+    }
+
+    #influencerCampaign{
+        margin-right: 2rem;
+    }
+}

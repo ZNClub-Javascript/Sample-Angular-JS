@@ -1,0 +1,34 @@
+page-influencer-home {
+    .post {
+        border-radius: 4px !important;
+        overflow: hidden;
+        height: 300px;
+        object-fit: cover;
+        width:100%
+    }
+
+    .profile {
+        object-fit: cover;
+    }
+
+    .influencer-card {
+        max-width: 610px;
+        border-radius: 4px !important;
+    }
+
+    .title{
+        font-weight: bold;
+        padding:2px;
+    }
+
+    .subtitle{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding:2px;
+    }
+   
+    .socialMediaIcon{
+        padding-right:2px;
+    }
+}

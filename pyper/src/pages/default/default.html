@@ -1,0 +1,173 @@
+<ion-header>
+
+  <pyper-navbar [isLoggedIn]="false"></pyper-navbar>
+
+
+</ion-header>
+<ion-content >
+  <ion-grid class="content-grid" padding margin>
+    <ion-row align-items-center text-center>
+      <ion-col col-6 >
+        <ion-slides autoplay="3000" style="height:55rem;width:50rem; margin:auto" paginationType="bullets" pager="true" loop="true" effect="fade" >
+          <ion-slide *ngFor="let slideImg of slideImgs">
+            <img src="{{slideImg}}">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col col-6 >
+        <h1 ion-text style="font-family:reklamescriptw00-medium,cursive; font-size:40px">Connecting Brands to People,
+          <br>One <span ion-text color="primary">Micro Influencer </span> At a Time</h1>
+        <br><br>
+        <h4 ion-text color="text-secondary">Authentic and personalized content at a
+          <br>fraction of the time and money</h4>
+        <br><br>
+        <button ion-button round (click)="goTo('DefaultBrandPage')" color="accent">Brands & PR</button>
+        <button ion-button round outline (click)="goTo('DefaultInfluencerPage')" color="accent">Influencers</button>
+
+      </ion-col>
+    </ion-row>
+    
+    <ion-row align-items-center text-center>
+      <ion-col col-6 >
+        <h1 ion-text text-uppercase>WHY IS PYPER GREAT FOR
+          <br><span ion-text color="primary" text-uppercase>BRANDS AND PR AGENCIES?</span></h1>
+
+        <br><br>
+        <ul ion-text color="text-secondary" text-left style="margin-left:10rem; font-size:16px">
+          <li>Create a campaign in a flash</li><br>
+          <li>Get authentic and personalized submissions in hours</li><br>
+          <li>Collaborate seamlessly to create branded content</li><br>
+          <li>Buy it if you like it. Otherwise, there's plenty more</li><br>
+          <li>Your approved posts published on influencers' social</li>
+        </ul>
+      </ion-col>
+      <ion-col col-6>
+        
+        <div class="iframe-outer">
+            <!--position: relative-->
+            <div class="iframe-inner">
+              <!--position: absolute-->
+              <iframe class="img-circle" src="../../assets/videos/influencer.mp4"
+              frameborder="0" allow="accelerometer; autoplay=0; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          </div>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row  align-items-center text-center>
+      <ion-col col-12 text-uppercase>
+        <h1 ion-text>2 Types of Campaigns</h1>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row align-items-center text-center>
+      <ion-col col-6 >
+          <img style="width:400px" src="../../assets/imgs/defaultpage/influencer.jpg" >
+      </ion-col>
+      <ion-col col-6>
+          <h1 ion-text text-uppercase color="primary">Influencer Campaign</h1>
+          <br><br>
+          <h4 ion-text color="text-secondary">Influencers create perfectly curated<br>photos to celebrate your brand.</h4>
+          <br><br>
+          <h4 ion-text color="text-secondary">If you approve, the influencers post<br>it on their social media handles</h4>
+          <br><br>
+          <button ion-button round (click)="goTo('DefaultBrandPage')" color="primary">Start Campaign</button>
+          
+        </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row align-items-center text-center>
+      <ion-col col-6>
+          <h1 ion-text text-uppercase color="accent">MARKETING CAMPAIGN</h1>
+          <br><br>
+          <h4 ion-text color="text-secondary">Influencers create branded content<br>crafted to your marketing needs</h4>
+          <br><br>
+          <h4 ion-text color="text-secondary">You can buy the content and license it<br>for all your marketing channels</h4>
+          <br><br>
+          <button ion-button round (click)="goTo('DefaultBrandPage')" color="accent">Start Campaign</button>
+          
+      </ion-col>
+      <ion-col col-6>
+          <img style="width:400px" src="../../assets/imgs/defaultpage/marketing.jpg" >
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row align-items-center text-center>
+        
+        <ion-col col-6>
+          <div class="iframe-outer">
+            <!--position: relative-->
+            <div class="iframe-inner">
+              <!--position: absolute-->
+              <iframe class="img-circle" src="../../assets/videos/influencer.mp4"
+              frameborder="0" allow="accelerometer; autoplay=0; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          </div>
+        </ion-col>
+        <ion-col col-6 >
+            <h1 ion-text text-uppercase>WHY IS PYPER A MUST FOR
+              <br><span ion-text color="primary" text-uppercase>INFLUENCERS?</span></h1>
+    
+            <br><br>
+            <ul ion-text color="text-secondary" text-left style="margin-left:10rem; font-size:16px">
+              <li>Follow and celebrate brands that you genuinely love​</li><br>
+              <li>Let your content speak for itself​</li><br>
+              <li>You get to quote what you think your content is worth</li><br>
+              <li>Once approved, you post and get paid immediately</li><br>
+              <li>Grow your social media presence like never before</li>
+            </ul>
+
+            <br><br>
+          <button ion-button round (click)="goTo('DefaultInfluencerPage')" color="primary">Start Now</button>
+
+          </ion-col>
+      </ion-row>
+        <br><br>
+        <ion-row align-items-center text-center text-justify>
+          <ion-col col-6 style="padding-left:50px">
+              
+              <h4 ion-text color="text-secondary">As a full time strategy consultant, I travel a lot. I
+                <br>end up clicking as many photos of the hotels as the 
+                <br>places I visit. My photos have been voted as the top
+                <br>50 on the Pyper leaderboard and the feedback from
+                <br>other influencers have helped me grow my social 
+                <br>media base by leaps and bounds! Oh btw, I have 
+                <br>also earned over 3 lacs in just 5 months on Pyper.</h4>
+              <br><br>
+              
+          </ion-col>
+          <ion-col col-6 >
+              <p text-center><img style="width:400px; height:400px; margin:auto" src="../../assets/imgs/defaultpage/sarthok.png" >
+              </p>
+              <br>
+              <p ion-text color="primary" text-center><img src="../../assets/imgs/instagram.png" style="height:30px"><a  href="https://www.instagram.com/sharthok.c/">@sharthok.c</a></p>
+              </ion-col>
+        </ion-row>
+
+        <ion-row  align-items-center text-center>
+            <ion-col col-12 text-uppercase>
+              <h1 ion-text>BRANDS WE PARTNER WITH</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row  align-items-center text-center>
+            <!-- todo replace this with carousel -->
+              <ion-col col-12 text-uppercase>
+                    <ion-slides autoplay="3000" slidesPerView="0" style="height:50rem;width:50rem; margin:auto" paginationType="bullets" pager="true" loop="true" effect="fade" >
+                      <ion-slide *ngFor="let slideImg of slideImgs">
+                        <img src="{{slideImg}}">
+                      </ion-slide>
+                    </ion-slides>
+              </ion-col>
+            </ion-row>
+            <ion-row  align-items-center text-center>
+                <ion-col col-12 text-uppercase >
+                  <h1 ion-text style="font-size: 50px" color="accent">10001</h1>
+                  <h1 ion-text style="font-size: 50px" >Campaigns and counting!</h1>
+                </ion-col>
+              </ion-row>
+  </ion-grid>
+  <pyper-footer></pyper-footer>
+</ion-content>
+
+
+  

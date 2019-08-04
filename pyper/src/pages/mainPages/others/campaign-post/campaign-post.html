@@ -1,0 +1,60 @@
+<ion-header>
+  <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+</ion-header>
+<ion-content>
+
+  <img class="postImage" *ngIf="imageDisplayUrl" [src]="imageDisplayUrl" alt="Post Image" />
+  <div *ngIf="isInfluencer">
+    <ion-row (click)="fileInp.click()" align-items-center class="postImage uploadImgDiv" *ngIf="!imageDisplayUrl">
+      <h3 class="uploadImgText" color="white" text-center ion-text text-uppercase>Upload Image</h3>
+    </ion-row>
+    <input #fileInp type="file" (change)="onUploadFile($event)" [hidden]="true">
+  </div>
+  <ion-grid>
+    <ion-row>
+      
+      <ion-col padding margin-left col-4 [ngSwitch]="post.status">
+          
+            <ion-badge *ngSwitchCase="1" color="warning">Pending</ion-badge>
+            <ion-badge *ngSwitchCase="2" color="success">Approved</ion-badge>
+            <ion-badge *ngSwitchCase="3" color="danger">Declined</ion-badge>
+            <ion-badge *ngSwitchCase="4" color="primary">Published</ion-badge>
+          
+        </ion-col>
+        
+    </ion-row>
+    <ion-row>
+      <ion-col col col-12>
+        <ion-card>
+          <ion-list>
+            <ion-item>
+              <ion-textarea [(ngModel)]="this.post.caption" placeholder="Put your caption here" rows=10></ion-textarea>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-buttons *ngIf="isInfluencer" end>
+    <button  [disabled]="!isInfluencerPostUploadValid()" ion-button full color="primary" (click)="publish()">Upload Image</button>
+  </ion-buttons>
+  <!-- swapped due to testing purposes
+  todo reswap -->
+  <ion-buttons *ngIf="isBrand" end>
+    <ion-grid no-padding no-margin>
+      <ion-row>
+        <ion-col col-6>
+            <button  [disabled]="!isPending()" ion-button full color="danger" (click)="decline()">Decline</button>
+        </ion-col>
+        <ion-col col-6>
+            <button  [disabled]="!isPending()" ion-button full color="success" (click)="approve()">Approve</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-buttons>
+</ion-footer>

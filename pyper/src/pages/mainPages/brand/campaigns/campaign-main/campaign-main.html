@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-header>
+      <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+
+    </ion-header>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-margin no-padding>
+
+  <pyper-campaign-breadcrumb [currentPageIndex]="currentPageIndex"></pyper-campaign-breadcrumb>
+
+  <page-campaign-create [hidden]="!isPageVisible(1)"></page-campaign-create>
+  <page-campaign-brief [hidden]="!isPageVisible(2)"></page-campaign-brief>
+  <page-campaign-creators [hidden]="!isPageVisible(3)"></page-campaign-creators>
+  <page-campaign-review [hidden]="!isPageVisible(4)"></page-campaign-review>
+  <page-campaign-submit [hidden]="!isPageVisible(5)"></page-campaign-submit>
+
+  <ion-buttons class="bottomButtons" end>
+
+    <button ion-button round color="accent" (click)="goToPreviousPage()">Previous</button>
+    <button ion-button round outline color="accent" [disabled]="!isFormValid()" (click)="goToNextPage()" *ngIf="!isPageVisible(5)">Next</button>
+    <button ion-button round outline color="accent" (click)="goToNextPage()" *ngIf="isPageVisible(5) && isDocUploaded()">Submit</button>
+    <button ion-button round outline color="accent" (click)="goToUploadDoc()" *ngIf="isPageVisible(5) && !isDocUploaded()">Submit</button>
+  </ion-buttons>
+</ion-content>

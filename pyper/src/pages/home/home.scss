@@ -1,0 +1,39 @@
+page-home {
+
+    .title-image {
+        margin-top: 8px;
+        height: 27px;
+    }
+
+    .maintext{
+        font-size:3em;
+        font-family:'Roboto Light'
+    }
+
+    .iframe-outer, .iframe-inner {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .iframe-outer {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .iframe-inner {
+        overflow: hidden;
+        border-radius: 5000px;
+        position: absolute;
+    }
+    
+        .iframe-inner iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+        .activeLink{
+            // color:black
+            border-radius: 32px;
+            padding:16px;
+        }
+}

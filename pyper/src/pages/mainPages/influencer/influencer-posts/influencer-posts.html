@@ -1,0 +1,30 @@
+<ion-header>
+    <pyper-navbar [isLoggedIn]="true">
+    </pyper-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-grid text-center>
+        <ion-row align-items-center>
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6>
+                <pyper-hover-image-square src="assets/imgs/approval-flow/approved.jpg" (click)="goToPostsDisplayPage(2)"
+                    text="Approved"></pyper-hover-image-square>
+            </ion-col>
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6>
+                <pyper-hover-image-square src="assets/imgs/approval-flow/published.jpg" (click)="goToPostsDisplayPage(4)"
+                    text="Published"></pyper-hover-image-square>
+            </ion-col>
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6>
+                <pyper-hover-image-square src="assets/imgs/approval-flow/pending.jpg" (click)="goToPostsDisplayPage(1)"
+                    text="Pending"></pyper-hover-image-square>
+            </ion-col>
+            <ion-col col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6>
+                <pyper-hover-image-square src="assets/imgs/approval-flow/declined.jpg" (click)="goToPostsDisplayPage(3)"
+                    text="Declined"></pyper-hover-image-square>
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+</ion-content>

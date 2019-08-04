@@ -1,0 +1,9 @@
+<ion-row align-items-center>
+    
+  <input #fileInp id="cover-image-input" type="file" (change)="invokeUpload($event)" [hidden]="true">
+  
+  <ion-col>
+    <pyper-hover-image [noSrcText]="noSrcText" text="Edit" [src]="src" (click)="fileInp.click()"></pyper-hover-image>
+  </ion-col>
+
+</ion-row>

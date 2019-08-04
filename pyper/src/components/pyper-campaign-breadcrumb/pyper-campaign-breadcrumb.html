@@ -1,0 +1,9 @@
+<div class="orderStatus">
+  <ul class="row">
+    <li class="col" [ngClass]="{'done' : currentPageIndex >= 1}" ><span [ngClass]="{'pyper-underline': currentPageIndex ==1 }">Create</span></li>
+    <li class="col" [ngClass]="{'done' : currentPageIndex >= 2}"><span [ngClass]="{'pyper-underline': currentPageIndex ==2 }">Brief</span></li>
+    <li class="col" [ngClass]="{'done' : currentPageIndex >= 3}" *ngIf="isInfluencer()" ><span [ngClass]="{'pyper-underline': currentPageIndex ==3 }">Creators</span></li>
+    <li class="col" [ngClass]="{'done' : currentPageIndex >= 4}"><span [ngClass]="{'pyper-underline': currentPageIndex ==4 }">Review</span></li>
+    <li class="col" [ngClass]="{'done' : currentPageIndex >= 5}"><span [ngClass]="{'pyper-underline': currentPageIndex ==5 }">Submit</span></li>
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+page-signup {
+    
+    .signupscreen{
+        height: 100%;
+    }
+
+    .logo{
+        object-fit:contain;
+    }
+
+    .non-logo{
+        .non-logo-grid {
+            padding: 0;
+            height: 100%;
+        }
+        ion-row {
+            
+            flex: 1;
+        }
+        form{
+            flex:1
+        }
+    }
+
+    
+}

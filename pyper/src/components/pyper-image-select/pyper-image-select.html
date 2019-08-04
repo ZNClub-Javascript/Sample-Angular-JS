@@ -1,0 +1,14 @@
+<!-- Generated template for the PyperImageSelectComponent component -->
+
+
+
+<div class="tileContainer" (click)="toggleSelect()" (mouseover)="hover()" (mouseout)="hoverOff()">
+    <img [src]="src" [alt]="text" class="tile" [ngClass]="{tileHover:isHovered || isSelected}">
+    <div class="middle" [ngClass]="{middleHover:isHovered || isSelected}">
+      <div class="text">
+        {{text}}
+        <br>
+        <ion-icon name="checkmark" *ngIf="isSelected"></ion-icon>
+      </div>
+    </div>
+  </div>

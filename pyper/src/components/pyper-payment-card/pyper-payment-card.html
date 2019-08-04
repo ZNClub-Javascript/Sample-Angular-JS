@@ -1,0 +1,47 @@
+<ion-card color="dark" class="card">
+
+  <ion-card-content class="content">
+    <br>
+    <ion-list>
+
+      <ion-item *ngIf="!isEnabled">
+        <ion-label color="white">Card Number</ion-label>
+        <ion-input [disabled]="!isEnabled" type="text" value="XXXX" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input [disabled]="!isEnabled" type="text" value="XXXX" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input [disabled]="!isEnabled" type="text" value="XXXX" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input [disabled]="!isEnabled" type="text" [(ngModel)]="cardNumber4" pattern="\d{4}" maxlength="4"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="isEnabled">
+        <ion-label color="white">Card Number</ion-label>
+        <ion-input type="text" [(ngModel)]="cardNumber1" (ionBlur)="changeInputs()" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input type="text" [(ngModel)]="cardNumber2" (ionBlur)="changeInputs()" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input type="text" [(ngModel)]="cardNumber3" (ionBlur)="changeInputs()" pattern="\d{4}" maxlength="4"></ion-input>
+        <ion-input type="text" [(ngModel)]="cardNumber4" (ionBlur)="changeInputs()" pattern="\d{4}" maxlength="4"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col col-5>
+        <ion-list>
+          <ion-item>
+            <ion-label color="white">Exp</ion-label>
+            <ion-input [disabled]="!isEnabled" (ionBlur)="changeInputs()" type="number" max="12" min="1" [(ngModel)]="mm" pattern="\d{2}"
+              maxlength="2"></ion-input>
+            <ion-input [disabled]="!isEnabled" (ionBlur)="changeInputs()" type="number" min="1" [(ngModel)]="yy" pattern="\d{2}" maxlength="2"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-5 offset-2>
+        <ion-list>
+          <ion-item >
+            <ion-label color="white">CVV</ion-label>
+            <ion-input *ngIf="!isEnabled" [disabled]="!isEnabled" type="text" pattern="\d{3}" maxlength="3" value="XXX"></ion-input>
+            <ion-input *ngIf="isEnabled" (ionBlur)="changeInputs()" type="text" pattern="\d{3}" maxlength="3" [(ngModel)]="defaultPayment.cvv"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <p ion-text text-uppercase>{{name}}</p>
+  </ion-card-content>
+
+</ion-card>

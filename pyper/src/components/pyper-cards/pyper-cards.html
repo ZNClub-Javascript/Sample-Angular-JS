@@ -1,0 +1,7 @@
+<ion-searchbar placeholder="Search" (ionInput)="filterItems($event)"></ion-searchbar>
+
+  <ion-row class="row">
+    <ion-col col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 *ngFor="let element of filteredData">
+        <pyper-card [displayLike]="displayLike" (cardTap)="OnTap(element.id)" [imageUrl]="element.imageUrl" [title]="element.title" [subtitle]="element.subtitle" [socialMedia]="element.socialMedia" [status]="element.status"></pyper-card>
+    </ion-col>
+  </ion-row>

@@ -1,0 +1,78 @@
+<ion-header>
+  <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+</ion-header>
+<ion-content>
+  <!-- COVER, LOGO -->
+  <div>
+    <img class="cover" id="cover-image" [src]="campaign.coverImageUrl" alt="cover image" />
+    <ion-avatar item-start>
+      <img class="logo" [src]="campaign.logoUrl" alt="" id="logo-image" />
+    </ion-avatar>
+  </div>
+  <!-- NAME, DESC -->
+  <div padding margin>
+    <div text-center>
+      <h1 id="product-name">{{campaign.productName}}</h1>
+      <h3 id="brand-name">{{campaign.name}}</h3>
+      <p id="prod-description">{{campaign.productDescription}}</p>
+    </div>
+        <!-- FILTER, ABOUT US, CONTENT -->
+      <div>
+        <div *ngIf="campaign.filter">
+          <h5 text-uppercase>INFLUENCER REQUIREMENTS</h5>
+          <p *ngIf="campaign.filter.minimumAge && campaign.filter.maximumAge">AGE: Between
+            {{campaign.filter.minimumAge}}
+            to {{campaign.filter.maximumAge}} years
+          </p>
+          <p *ngIf="!_.isEmpty(campaign.socialMedia)">
+            Social media: {{getSocialMediaNames()}}
+          </p>
+        </div>
+        <div *ngIf="brand">
+          <h5 text-uppercase>ABOUT US</h5>
+          <p>{{brand.aboutUs}}</p>
+        </div>
+        <h5 text-uppercase>CONTENT WE'D LOVE FROM YOU</h5>
+        <p>{{campaign.specification}}</p>
+      </div>
+      <h5 text-uppercase *ngIf="!_.isEmpty(campaign.dreamboardImageUrls)">dreamboard</h5>
+  </div>
+  <!-- DREAMBOARD -->
+  <div *ngIf="!_.isEmpty(campaign.dreamboardImageUrls)">
+    <ion-slides autoplay="3000" style="width:100%;" paginationType="bullets" pager="true" loop="true" effect="slide">
+      <ion-slide *ngFor="let imageUrl of campaign.dreamboardImageUrls">
+        <img class="cover" src="{{imageUrl}}">
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <!-- DOs, DONTs, MARKET INFO, HOUSE RULES, END DATE -->
+  <div padding margin>
+    <div>
+      <h5 text-uppercase>do's</h5>
+      <div *ngFor="let item of campaign.dos">
+        <p><span>
+            <ion-icon color="success" name="checkmark-circle"></ion-icon>
+          </span> {{item}}</p>
+      </div>
+
+      <h5 text-uppercase>dont's</h5>
+      <div *ngFor="let item of campaign.donts">
+        <p><span>
+            <ion-icon color="danger" name="close-circle"></ion-icon>
+          </span> {{item}}</p>
+      </div>
+
+      <h5 text-uppercase>where to get our product</h5>
+      <p>{{campaign.productMarketInformation}}</p>
+
+      <h5 text-uppercase>house rules</h5>
+      <p>TODO</p>
+
+      <h5 text-uppercase>campaign ends on</h5>
+      <p>{{campaign.submissionEndDate.toMillis() | date:'fullDate'}}</p>
+    </div>
+  </div>
+  <button color="accent" (click)="goToCampaignPost()" ion-button full>
+    CREATE SUBMISSION
+  </button>
+</ion-content>

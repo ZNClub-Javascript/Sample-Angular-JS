@@ -1,0 +1,71 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Upload PAN , GST Documents </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center>
+  <p text-center>Just 2 more steps for your campaign to be published. <br> This is essential to protect your brand.</p>
+
+
+  <form #campaignCreateForm="ngForm" >
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6>
+          <ion-label text-center color="primary">Upload PAN</ion-label>
+          <ion-input type="file"  accept="image/*" (change)="changeListener($event,'panimg')"></ion-input>
+      </ion-col>
+      <!-- <ion-col col-12 col-md-6>
+        <input type="file" name="gstUrl"  (change)="fileUpload($event,'gst')" id="gst-image-input" style="opacity:0"
+          #fileInp>
+        <button ion-button padding icon-end>Upload GST</button>
+      </ion-col> -->
+      <ion-col col-12 col-md-6>
+          <ion-label text-center color="primary">Upload GST</ion-label>
+          <ion-input type="file"  accept="image/*" (change)="changeListener($event,'gstimg')"></ion-input>
+      </ion-col>
+
+
+    </ion-row>
+
+
+    <ion-row>
+        
+        <ion-col col-12 col-md-12>
+      <button ion-button item-canter color="accent" style="margin-top: 100px" (click)="goToUploadDoc()" >Submit Documents</button>
+         
+        </ion-col>
+  
+  
+      </ion-row>
+    
+
+  
+
+  </ion-grid>
+
+  </form>
+
+
+
+
+
+
+
+
+</ion-content>

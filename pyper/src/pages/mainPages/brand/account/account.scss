@@ -1,0 +1,14 @@
+page-account {
+    .item-md ion-avatar ion-img, .item-md ion-avatar img{
+        width: 130px;
+        height: 130px;
+    }
+
+    .brandlogo{
+        object-fit:cover;
+    }
+
+    ion-icon{
+        margin-left: 20px;
+    }
+}

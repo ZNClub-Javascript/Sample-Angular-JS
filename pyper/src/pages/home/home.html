@@ -1,0 +1,37 @@
+<ion-header>
+  <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <!-- todo use this incase there is a need for the bleow buttons -->
+      <ion-col col-md-6 col-12 *ngIf="false">
+        <ion-row style="height:100%;" align-items-center text-center>
+          <ion-col color="primary">
+            <h1 ion-text color="primary" class="maintext">Create your brand's uniqueness</h1>
+            <button ion-button round (click)="redirectWithRole(1)">I am a Brand</button>
+            <button ion-button round outline (click)="redirectWithRole(2)">I am an Influencer</button>
+            <button ion-button round (click)="redirectWithRole(3)">I am a PR Agency</button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col offset-md-3 col-md-6 col-12>
+
+        <ion-slides autoplay="3000" paginationType="centeredSlides" loop="true" effect="cube" pager="true">
+          <ion-slide *ngFor="let slideImg of slideImgs">
+            <img src="{{slideImg}}">
+          </ion-slide>
+
+        </ion-slides>
+
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

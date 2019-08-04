@@ -1,0 +1,8 @@
+{
+  "name": "pyper",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "ecc87268"
+}

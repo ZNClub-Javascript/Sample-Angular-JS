@@ -1,0 +1,120 @@
+
+<ion-header>
+				<pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+			
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid *ngIf="brand">
+		<ion-list>
+			<ion-row>
+				<ion-col col-md-6 col-12>
+					<ion-row>
+
+						<ion-col col-12 align-self-center text-center>
+							<h6 ion-text text-center text-uppercase color="text-primary">Brand Name
+								<ion-icon *ngIf="!isEditable.get('name')" color="primary" name="create" (click)="onEdit('name')"></ion-icon>
+							</h6>
+							<div *ngIf="!isEditable.get('name')">
+								<h6 ion-text text-center color="text-secondary">{{brand.name}}</h6>
+							</div>
+							<ion-item *ngIf="isEditable.get('name')">
+								<ion-input class="form-control" type="text" [(ngModel)]="brand.name" required></ion-input>
+							</ion-item>
+
+						</ion-col>
+
+					</ion-row>
+					<div *ngIf="isEditable.get('name')"><br><br></div>
+					<ion-row >
+						<ion-col col-4 offset-4 >
+							<pyper-fileinput [src]="logoImageDisplayUrl" [noSrcText]="noSrcTextLogo" text="Logo" (OnUpload)="onUpload($event, 'logoUrl')"></pyper-fileinput>
+						</ion-col>
+					</ion-row>
+					<br><br>
+					<ion-row>
+						<ion-col col-6>
+
+							<h6 ion-text text-uppercase color="text-primary">About Us
+								<ion-icon *ngIf="!isEditable.get('aboutUs')" color="primary" name="create" (click)="onEdit('aboutUs')"></ion-icon>
+							</h6>
+							<div *ngIf="!isEditable.get('aboutUs')">
+								<h6 ion-text color="text-secondary">{{brand.aboutUs}}</h6>
+							</div>
+							<ion-item *ngIf="isEditable.get('aboutUs')">
+								<ion-input class="form-control" type="text" [(ngModel)]="brand.aboutUs" placeholder="Enter something about the brand"
+								 required></ion-input>
+							</ion-item>
+						</ion-col>
+						<ion-col col-6>
+							<h6 ion-text text-uppercase color="text-primary">One Unique fact about us
+								<ion-icon *ngIf="!isEditable.get('uniqueFact')" color="primary" name="create" (click)="onEdit('uniqueFact')"></ion-icon>
+							</h6>
+							<div *ngIf="!isEditable.get('uniqueFact')">
+								<h6 ion-text color="text-secondary">{{brand.uniqueFact}}</h6>
+							</div>
+							<ion-item *ngIf="isEditable.get('uniqueFact')">
+								<ion-input class="form-control" type="text" [(ngModel)]="brand.uniqueFact" placeholder="Enter a unique fact"
+								 required></ion-input>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+					<br><br>
+					<ion-row>
+						<ion-col col-6>
+							<h6 ion-text text-uppercase color="text-primary">Products
+								<ion-icon *ngIf="!isEditable.get('products')" color="primary" name="create" (click)="onEdit('products')"></ion-icon>
+							</h6>
+							<div>
+								<span *ngFor="let product of brand.products">
+									<pyper-bullet [text]="product" [isCloseEnabled]="isEditable.get('products')" (textDeleted)="removeItem(product, brand.products)"></pyper-bullet>
+								</span>
+							</div>
+							<ion-item *ngIf="isEditable.get('products')">
+								<ion-input class="form-control" type="text" placeholder="Enter product" [(ngModel)]="productToBeAdded"
+								 (keyup.enter)="addToProducts()"></ion-input>
+							</ion-item>
+						</ion-col>
+						<ion-col col-6>
+							<h6 ion-text text-uppercase color="text-primary">Geographies present in
+								<ion-icon *ngIf="!isEditable.get('geographies')" color="primary" name="create" (click)="onEdit('geographies')"></ion-icon>
+							</h6>
+							<div>
+								<span *ngFor="let region of brand.geographies">
+									<pyper-bullet [text]="region" [isCloseEnabled]="isEditable.get('geographies')" (textDeleted)="removeItem(region, brand.geographies)"></pyper-bullet>
+								</span>
+							</div>
+							<ion-item *ngIf="isEditable.get('geographies')">
+								<ion-input class="form-control" type="text" placeholder="Enter country" [(ngModel)]="regionToBeAdded"
+								 (keyup.enter)="addToGeographies()"></ion-input>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+				</ion-col>
+
+				<ion-col col-md-6 col-12>
+					<ion-row>
+						<ion-col col-12 text-center>
+							<h6 ion-text text-uppercase color="text-primary">Credit Card Details
+								<ion-icon *ngIf="!isEditable.get('creditCard')" color="primary" name="create" (click)="onEdit('creditCard')"></ion-icon>
+							</h6>
+						</ion-col>
+					</ion-row>
+					<ion-row >
+						<ion-col col-md-8 col-sm-12 offset-md-2>
+
+							<pyper-payment-card [isEnabled]="isEditable.get('creditCard')" [defaultPayment]="defaultPayment" [name]="brand.name">
+							</pyper-payment-card>
+
+						</ion-col>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+		</ion-list>
+	</ion-grid>
+
+	<ion-buttons end>
+		<button ion-button round color="accent" *ngIf="isEditEnabled()" (click)="onSave()">Save</button>
+	</ion-buttons>
+</ion-content>

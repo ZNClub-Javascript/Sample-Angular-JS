@@ -1,0 +1,53 @@
+pyper-hover-image-square {
+        .tileContainer {
+            position: relative;
+            width: 100%;
+            max-height:250px;
+            background-color: #000000;
+            margin: auto;
+        }
+        
+        .tile {
+          opacity: 1;
+          display: block;
+          width: 100%;
+          max-height:250px;
+          object-fit: cover;
+          transition: .5s ease;
+          backface-visibility: hidden;
+        }
+        
+        .middle {
+          transition: .5s ease;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          text-align: center;
+        }
+    
+        .square{
+            width: 100%;
+            max-height:250px;
+            background-color:skyblue;
+        }
+        
+        
+    
+        .tileHover{
+            opacity: 0.3;
+        }
+    
+        .middleHover{
+            opacity: 1;
+        }
+        
+        .text {
+          color: white;
+          font-size: 20px;
+          padding: 16px 32px;
+        }
+        
+}

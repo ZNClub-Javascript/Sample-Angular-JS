@@ -1,0 +1,101 @@
+
+
+<!-- Themes  register-flat-->
+<ion-content *ngIf="loginTemplate != null" >
+  <ion-grid no-padding no-margin class="loginscreen" align-items-stretch >
+    <!-- logo -->
+    <ion-row align-items-start  align-items-stretch  style="height:100%; ">
+
+     
+
+      <ion-col col-12 col-md-6 text-center >
+
+
+          
+ 
+          <!-- <ion-card *ngIf="userData">
+            <ion-card-header>{{ userData.username }}</ion-card-header>
+            <img [src]="userData.picture" />
+            <ion-card-content>
+              <p>Email: {{ userData.email }}</p>
+              <p>First Name: {{ userData.first_name }}</p>
+            </ion-card-content>
+          </ion-card> -->
+         
+        <img class="logo" src="{{loginTemplate.logo}}" />
+      </ion-col>
+
+      <!-- Section form>-->
+      <ion-col col-12 col-md-6 class="non-logo">
+        <ion-grid class="non-logo-grid">
+          <form padding novalidate [formGroup]="loginForm">
+            <ion-grid class="non-logo-grid">
+              <ion-row align-items-start align-items center>
+                <!-- title -->
+                <ion-col col-12>
+                  <h1 ion-text color="primary" text-center><strong>{{loginTemplate.title}}</strong></h1>
+                  <h4 ion-text color="primary" text-center><strong>{{loginForm.value.email}}<span *ngIf="loginForm.value.email == null || loginForm.value.email != ''">,</span></strong></h4>
+                </ion-col>
+
+                <!-- inputs -->
+                <ion-col col-12>
+                  <div input-field>
+                    <!-- Input-field-text -->
+                    <ion-item no-padding>
+                      <ion-input type="text" [placeholder]="loginTemplate.txtemail" formControlName="email"></ion-input>
+                      <!-- [(ngModel)]="email" [ngModelOptions]="{standalone: true}" -->
+
+                    </ion-item>
+                    <p ion-text color="danger" *ngIf="!isemailValid()">{{loginTemplate.errorUser}}</p>
+
+                    <!-- Input-field-password -->
+                    <ion-item no-padding>
+                      <ion-input type="password" [placeholder]="loginTemplate.txtPassword" formControlName="password"></ion-input>
+
+                    </ion-item>
+                    <div padding class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+                      <p ion-text color="danger" *ngIf="password.errors.required">Password is required</p>
+                      <p ion-text color="danger" *ngIf="password.errors.minlength">Password must be 8 characters long</p>
+                    </div>
+                  </div>
+
+                </ion-col>
+
+                <!-- login button -->
+                <ion-col col-12 margin>
+                  <!--TODO Use loop instead of hardcoding html elements-->
+                  <ion-row>
+                    <button col-10 col-md-2 marign ion-button color="primary" text-center round text-uppercase (click)="logIn()" [disabled]="this.email.invalid || this.password.invalid">{{loginTemplate.btnLogin}}</button>
+                    <button col-5 col-md-2 marign icon-start ion-button color="white" round text-uppercase  (click)="loginWithFB()"><ion-icon color="facebookblue" name="logo-facebook"></ion-icon>{{loginTemplate.btnFacebookSignIn}}</button>
+                    <button col-5 col-md-2 marign icon-start  ion-button color="white" round text-uppercase *ngIf="canDisplay()" (click)="signInWithTwitter()"><ion-icon color="twitterblue" name="logo-twitter"></ion-icon>{{loginTemplate.btnTwitterSignIn}}</button>                  
+                    <button col-10 col-md-2 marign icon-start ion-button color="white" round text-uppercase *ngIf="canDisplay()" (click)="signInWithGoogle()"><ion-icon color="danger" name="logo-google"></ion-icon>{{loginTemplate.btnGoogleSignIn}}</button>
+                  </ion-row>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+
+          </form>
+          <ion-row align-items-center text-center>
+            <!-- Description -->
+            <div description>
+              <ion-row>
+                <!-- Reset your password button -->
+                <ion-col col-12 no-padding>
+                  <p no-margin no-padding>{{loginTemplate.txtForgotPassword}} <a (click)="goToForgotpasswordPage()">{{loginTemplate.btnForgotPassword}}</a>
+                  </p>
+                </ion-col>
+                <!-- login now button -->
+                <ion-col col-12 no-padding>
+                  <p no-margin no-padding>{{loginTemplate.txtSignupnow}} <a (click)="goToSignUpPage()">{{loginTemplate.btnSignupnow}}</a>
+                  </p>
+                </ion-col>
+
+              </ion-row>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

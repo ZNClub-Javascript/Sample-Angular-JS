@@ -1,0 +1,47 @@
+pyper-image-select {
+    .tileContainer {
+        position: relative;
+        width: 15rem;
+        height:15rem;
+        background-color: #000000;
+        border-radius:50%;
+    }
+    
+    .tile {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s ease;
+      backface-visibility: hidden;
+      border-radius:50%;
+    }
+    
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    
+
+    .tileHover{
+        opacity: 0.3;
+    }
+
+    .middleHover{
+        opacity: 1;
+    }
+    
+    .text {
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+}

@@ -1,0 +1,202 @@
+<ion-header>
+
+    <pyper-navbar [isLoggedIn]="false"></pyper-navbar>
+  
+  
+  </ion-header>
+  <ion-content >
+    <ion-grid padding margin>
+      <ion-row align-items-center text-center>
+          <ion-col col-6 >
+              <h1 ion-text style="font-family:reklamescriptw00-medium,cursive; font-size:40px">
+                <span ion-text color="primary">Endorse</span>. Engage. Earn.</h1>
+              <br><br>
+              <h4 ion-text color="text-secondary">Ignite your social media growth by 
+                  <br>representing some of the biggest names. 
+                </h4>
+              <br><br>
+              <h4 ion-text color="text-secondary">Celebrate the brands that you already 
+                  <br>love and can't do without.
+                  
+                </h4>
+
+                <br><br>
+                <!-- todo modify this -->
+                <button ion-button round color="text-primary" (click)="goToPage('InfluencerHomePage')">Download on the AppStore</button>
+                <button ion-button round color="text-primary">Get it on Play Store</button>
+                
+              </ion-col>
+        <ion-col col-6 >
+            <img src="../../../assets/imgs/influencers/1.png" >          
+        </ion-col>
+        
+      </ion-row>
+      <br><br><br><br>
+      <ion-row align-items-center text-center>
+          <ion-col col-6 >
+              <ion-slides autoplay="3000" paginationType="bullets" pager="true" loop="true" effect="cube" >
+                  <ion-slide *ngFor="let slideImg of slideImgs">
+                    <img src="{{slideImg}}">
+                  </ion-slide>
+                </ion-slides>          
+          </ion-col>
+          <ion-col col-6 >
+            
+
+            <h1 ion-text text-uppercase color="accent" style="font-size:40px">INR 52 Lacs
+              </h1>
+            <br><br>
+            <h4 ion-text color="text-secondary" >
+                Paid to everyday creators for promoting 
+                <br>the brands they genuinely love
+              </h4>
+              <br><br>
+            <h1 ion-text text-uppercase color="accent" style="font-size:40px">INR 4.7 Lacs
+              </h1>
+              <br><br>
+            <h4 ion-text color="text-secondary">
+              Paid out this month alone!
+              </h4>
+          </ion-col>
+          
+        </ion-row>
+
+
+      <br><br>
+
+      <ion-row align-items-center text-center>
+        
+          
+          <ion-col col-6 >
+              <h1 ion-text text-uppercase>WHY IS PYPER A MUST FOR
+                <br><span ion-text color="primary" text-uppercase>INFLUENCERS?</span></h1>
+      
+              <br><br>
+              <h4 ion-text color="text-secondary">All you have to do is bring your A game. 
+                <br>And be authentic.
+              </h4>
+              <br><br>
+              <h4 ion-text color="text-secondary">We'll get your favourite brands to you.</h4>
+
+            </ion-col>
+            <ion-col col-6>
+                <div class="iframe-outer">
+                    <!--position: relative-->
+                    <div class="iframe-inner">
+                      <!--position: absolute-->
+                      <iframe class="img-circle" src="../../assets/videos/influencer.mp4"
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                  </div>
+                  </div>
+              </ion-col>
+        </ion-row>
+      
+        <br><br><br><br><br><br>
+      <ion-row  align-items-center text-center>
+        <ion-col col-12 text-uppercase>
+          <h1 ion-text style="font-size: 30px">DON'T RUN OUT OF IDEAS, COZ WE AIN'T RUNNING OUT OF BRANDS</h1>
+        </ion-col>
+      </ion-row>
+
+      <ion-row  align-items-center text-center>
+          <ion-col col-12 text-uppercase>
+            <!-- todo put a slider   -->
+          </ion-col>
+        </ion-row>
+      <br><br><br>
+      
+          
+  
+          <ion-row  align-items-center text-center>
+              <ion-col col-12 text-uppercase>
+                <h1 ion-text>WHAT DIFFERENTIATES PYPER?</h1>
+              </ion-col>
+            </ion-row>
+            <br><br><br><br>
+            <ion-row  align-items-center text-center>
+                <ion-col col-3>
+                    <img height="100px" src="../../../assets/imgs/influencers/feature1.jpg" >          
+                    <br>
+                    <h4 ion-text>INSTANT SERVE</h4>
+                    <p ion-text color="text-secondary">Set your own quote and get 
+                      <br>paid when you post
+                    </p>
+                  </ion-col>
+                  <ion-col col-3>
+                      <img height="100px" src="../../../assets/imgs/influencers/feature2.png" >          
+                      <br>
+                      <h4 ion-text>CONTENT IS KING
+                        </h4>
+                      <p ion-text color="text-secondary">Social media marketing, not  
+                        <br>socialite media
+                      </p>
+                    </ion-col>
+                    <ion-col col-3>
+                        <img height="100px" src="../../../assets/imgs/influencers/feature3.png" >          
+                        <br>
+                        <h4 ion-text>SOCIAL MEDIA GROWTH</h4>
+                        <p ion-text color="text-secondary">Transition from a micro  
+                          <br>influencer to a trendsetter
+                        </p>
+                      </ion-col>
+                      <ion-col col-3>
+                          <img height="100px" src="../../../assets/imgs/influencers/feature4.jpg" >          
+                          <br>
+                          <h4 ion-text>COMPLETE CONTROL</h4>
+                          <p ion-text color="text-secondary">Your content belongs to you, 
+                            <br>unless you sell it
+                          </p>
+                        </ion-col>
+              </ion-row>
+              <br><br>
+              <br><br><br><br>
+
+                <ion-row  align-items-center text-center>
+                    <ion-col col-12 >
+                      <h1 ion-text style="font-size:35px">How do I go about it?</h1>
+                    </ion-col>
+                  </ion-row>
+              
+                  <br><br><br><br>
+                <ion-row  align-items-center text-center>
+                    <ion-col col-12 text-uppercase>
+                      <!-- todo add a slider with images   -->
+                    </ion-col>
+                  </ion-row>
+                  <br><br><br><br>
+                  <ion-row  align-items-center text-center>
+                      <ion-col col-12 >
+                        <h1 ion-text style="font-size:35px">Explore</h1>
+                      </ion-col>
+                    </ion-row>
+                
+                    <ion-row align-items-center text-center>
+                        <ion-col col-6 >
+                            <img src="../../../assets/imgs/influencers/final.png" >          
+                        </ion-col>  
+                      <ion-col col-6 >
+                            <h1 ion-text style="font-family:reklamescriptw00-medium,cursive; font-size:40px">Ready to represent your 
+                              <br>favourite brands? 
+                            </h1>
+                            <br><br>
+                            <h4 ion-text color="text-secondary">Download the Pyper app today and let  
+                                <br>your creativity do the talking 
+                              </h4>
+                            
+              
+                              <br><br>
+                              <!-- todo modify this -->
+                              <button ion-button round color="text-primary">Download on the AppStore</button>
+                              <button ion-button round color="text-primary">Get it on Play Store</button>
+                              
+                            </ion-col>
+                      
+                      
+                    </ion-row>
+    </ion-grid>
+    <pyper-footer></pyper-footer>
+  </ion-content>
+  
+  
+    
+  

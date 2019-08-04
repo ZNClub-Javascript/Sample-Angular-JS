@@ -1,0 +1,28 @@
+<ion-card class="ion-pyper-card">
+  <img class="post" (click)="onClick()" (dblclick)="toggleLike()" [src]="imageUrl">
+  <ion-row>
+    <ion-col col-9 ion-text text-left padding>
+      
+      <h3 class="title"> <pyper-like [liked]="liked" *ngIf="displayLike"></pyper-like> {{title}}</h3>
+      <p class="subtitle">{{subtitle}}</p>
+      
+    </ion-col>
+    <ion-col col-3 ion-text text-right padding *ngIf="socialMedia">
+      <ion-icon class="socialMediaIcon" *ngIf="socialMedia.isFacebook" color="text-secondary" ios="logo-facebook" md="logo-facebook"></ion-icon>
+      <ion-icon class="socialMediaIcon" *ngIf="socialMedia.isInstagram" color="text-secondary" ios="logo-instagram" md="logo-instagram"></ion-icon>
+      <ion-icon class="socialMediaIcon" *ngIf="socialMedia.isTwitter" color="text-secondary" ios="logo-twitter" md="logo-twitter"></ion-icon>
+      <ion-icon class="socialMediaIcon" *ngIf="socialMedia.isYoutube" color="text-secondary" ios="logo-youtube" md="logo-youtube"></ion-icon>
+
+    </ion-col>
+    <ion-col col-3 ion-text text-right padding *ngIf="status" [ngSwitch]="status">
+          
+      <ion-badge *ngSwitchCase="1" color="warning">Pending</ion-badge>
+      <ion-badge *ngSwitchCase="2" color="success">Approved</ion-badge>
+      <ion-badge *ngSwitchCase="3" color="danger">Declined</ion-badge>
+      <ion-badge *ngSwitchCase="4" color="primary">Published</ion-badge>
+    
+    </ion-col>
+    
+  </ion-row>
+
+</ion-card>

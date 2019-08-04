@@ -1,0 +1,91 @@
+<!--
+  Generated template for the CampaignSubmitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding no-bounce>
+    
+    <form >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 col-md-6>
+                    <h6 ion-text text-uppercase color="text-primary" >Campaign Budget</h6>
+
+                    <ion-item>
+                        <ion-label floating>Campaign Budget</ion-label>
+                        <ion-input type="text" pattern="[0-9]"></ion-input>
+                    </ion-item>
+
+                </ion-col>
+
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 col-md-6>
+                    <ion-item>
+                        <ion-label floating>Credit Card Info</ion-label>
+                        <ion-input type="text" pattern="[0-9]"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-12 col-md-6>
+                    <ion-item>
+                        <ion-label floating>Invoice po number</ion-label>
+                        <ion-input type="text" pattern="[0-9]"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 col-md-3>
+                    <ion-item>
+                        <ion-label floating>Month</ion-label>
+                        <ion-input type="month"></ion-input>
+                    </ion-item>
+                </ion-col>
+                
+                <ion-col col-12 col-md-6 offset-md-3>
+                    <ion-item>
+                        <ion-label floating>Accounts Payable</ion-label>
+                        <ion-input type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+
+                    <ion-list-header>
+                        Response Time
+                    </ion-list-header>
+                    <ion-item>
+                            <ion-select name="responseTime" ngModel >
+                              <ion-option *ngFor="let option of responseTimeOptions">{{option}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+                    
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 col-md-6>
+                    <ion-item>
+                        <ion-label floating>Publish Brief Date</ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="publishDate" [ngModelOptions]="{standalone:true}"></ion-datetime>
+                    </ion-item>
+
+
+                </ion-col>
+
+                <ion-col col-12 col-md-6>
+                    <ion-item>
+                        <ion-label floating>Submission End Date</ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="submissionDate" [ngModelOptions]="{standalone:true}"></ion-datetime>
+                    </ion-item>
+
+
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+
+
+    </form>
+
+</ion-content>

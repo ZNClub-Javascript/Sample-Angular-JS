@@ -1,0 +1,72 @@
+<ion-navbar>
+  <!-- todo uncomment this if menu is needed -->
+  <button ion-button menuToggle *ngIf="!isLoggedIn && !isBrowser()">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    <logo></logo>
+  </ion-title>
+
+  <ion-buttons end>
+    <span *ngIf="isBrowser()">
+      <!-- TODO: Convert to Objects, let each object manage state -->
+      <span *ngIf="isLoggedIn && isBrand">
+        <button ion-button (click)="setRoot('HomePage')" [ngClass]="{'activeLink':isPageActive('HomePage')}" [outline]="isPageActive('HomePage')"
+          round>
+          Home
+        </button>
+        <button ion-button (click)="setRoot('CreatePage')" [ngClass]="{'activeLink':isPageActive('CreatePage')}"
+          [outline]="isPageActive('CreatePage')" round>
+          Create
+        </button>
+        <button ion-button (click)="setRoot('CampaignViewMainPage')" [ngClass]="{'activeLink':isPageActive('CampaignViewMainPage')}"
+          [outline]="isPageActive('CampaignViewMainPage')" round>
+          My Campaigns
+        </button>
+        <button ion-button (click)="setRoot('PostPage')" [ngClass]="{'activeLink':isPageActive('PostPage')}" [outline]="isPageActive('PostPage')"
+          round>
+          Post
+        </button>
+        <button ion-button (click)="setRoot('InboxPage')" [ngClass]="{'activeLink':isPageActive('InboxPage')}"
+          [outline]="isPageActive('InboxPage')" round>
+          Inbox
+        </button>
+        <button ion-button (click)="setRoot('AccountPage')" [ngClass]="{'activeLink':isPageActive('AccountPage')}"
+          [outline]="isPageActive('AccountPage')" round>
+          Account
+        </button>
+      </span>
+
+      <span *ngIf="isLoggedIn && isInfluencer">
+        <!-- put elements that you want to show for influencer -->
+        
+      </span>
+
+      <span *ngIf="!isLoggedIn">
+        <button ion-button (click)="setRoot('DefaultPage')" [ngClass]="{'activeLink':isPageActive('DefaultPage')}"
+          [outline]="isPageActive('DefaultPage')" round>
+          Home
+        </button>
+        <button ion-button (click)="setRoot('DefaultBrandPage')" [ngClass]="{'activeLink':isPageActive('DefaultBrandPage')}"
+          [outline]="isPageActive('DefaultBrandPage')" round>
+          Brands
+        </button>
+        <button ion-button (click)="setRoot('DefaultInfluencerPage')" [ngClass]="{'activeLink':isPageActive('DefaultInfluencerPage')}"
+          [outline]="isPageActive('DefaultInfluencerPage')" round>
+          Influencers
+        </button>
+        <button ion-button (click)="setRoot('DefaultPage')" [ngClass]="{'activeLink':isPageActive('')}" [outline]="isPageActive('')"
+          round>
+          Explore
+        </button>
+
+      </span>
+
+    </span>
+    <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="more"></ion-icon>
+    </button>
+
+  </ion-buttons>
+
+</ion-navbar>

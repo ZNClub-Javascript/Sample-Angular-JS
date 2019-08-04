@@ -1,0 +1,55 @@
+page-default-influencer {
+    .content-grid{
+        ion-row{
+            margin-top: 50px;
+            margin-bottom:50px;
+        }
+    } 
+
+    h4{
+        letter-spacing: 0.10em;
+        font-family:open sans,sans-serif;
+        line-height: 1.5em;
+    }
+
+    li{
+        font-family:open sans,sans-serif;
+    }
+
+    .title-image {
+        margin-top: 8px;
+        height: 27px;
+    }
+
+    .maintext{
+        font-size:3em;
+        font-family:'Roboto Light'
+    }
+
+    .iframe-outer, .iframe-inner {
+        height: 40rem;
+        width: 40rem;
+    }
+    
+    .iframe-outer {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .iframe-inner {
+        overflow: hidden;
+        border-radius: 5000px;
+        position: absolute;
+    }
+    
+        .iframe-inner iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+        .activeLink{
+            // color:black
+            border-radius: 32px;
+            padding:16px;
+        }
+}

@@ -1,0 +1,8 @@
+<!-- Generated template for the PyperBulletComponent component -->
+<ion-chip >
+  <ion-icon name="{{icon}}" color="{{iconColor}}" *ngIf="isIcon()" ></ion-icon>
+  <ion-label>{{text}}</ion-label>
+  <button ion-button clear color="{{iconColor}}" *ngIf="checkCloseEnabled()">
+    <ion-icon name="close-circle" (click)="delete()"></ion-icon>
+  </button>
+</ion-chip>

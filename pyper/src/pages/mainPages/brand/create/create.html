@@ -1,0 +1,58 @@
+<ion-header>
+    <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-5 >
+        <ion-row>
+          <ion-col text-center>
+            <p ion-text color="primary"><b>INFLUENCER CAMPAIGN</b></p><br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <img alt="logo" id="influencerCampaign" width="300px" height="370px" src="assets/imgs/3.jpg" (click)="goToInfluencerCampaignCreatePage()">
+
+        </ion-row>
+        <ion-row>
+          <p text-center>Influencers create perfectly curated photos to <br> celebrate your brand. <br>
+            If you approve, the influencers post it on their <br> social media handles
+          </p>
+        </ion-row>
+        
+      </ion-col>
+      <ion-col col-md-1>
+
+      </ion-col>
+      <ion-col col-md-1 class="mycontent-left">
+
+      </ion-col>
+      <ion-col col-12 col-md-5>
+        <ion-row>
+          <ion-col text-center>
+            <p ion-text color="accent"><b>CONTENT CAMPAIGN</b></p><br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+
+          <img alt="logo" id="influencerCampaign" width="300px" height="370px" src="assets/imgs/4.jpg" (click)="goToContentCampaignCreatePage()">
+
+        </ion-row>
+        <ion-row>
+          <p text-center>Influencers create branded content crafted to <br> your marketing needs​ <br>
+            You can buy the content and license it for all <br> your marketing channels
+
+          </p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
+</ion-content>

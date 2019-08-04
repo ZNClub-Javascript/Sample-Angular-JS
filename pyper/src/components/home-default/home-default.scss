@@ -1,0 +1,118 @@
+home-default {
+    .title-image {
+        margin-top: 8px;
+        height: 27px;
+    }
+
+    .maintext{
+        font-size:3em;
+        font-family:'Roboto Light'
+    }
+
+    .iframe-outer, .iframe-inner {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .iframe-outer {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .iframe-inner {
+        overflow: hidden;
+        border-radius: 5000px;
+        position: absolute;
+    }
+    
+        .iframe-inner iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+       
+
+        .row{
+        align-content: center;
+            align-items: center;
+            text-align: center;
+         }
+
+         .slide-zoom{
+             text-align: right;
+         }
+
+         .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+             left: 120px;
+         }
+
+         .ui1{
+            font-size: 35px;
+            letter-spacing: -0.12rem;
+            font-family:reklamescriptw00-medium,cursive;
+         }
+
+         .button-inner{
+             font-size: 1.4rem;
+         }
+
+         .ui2, .ui3, .ui5
+         {
+            font-family:open sans,sans-serif; 
+            font-weight:bold; 
+            font-size:16px; 
+            letter-spacing:0.1em;
+         }
+
+         .ui3a, .ui4a,.ui5a, .ui2a, .ui1a{
+            font-family:open sans,sans-serif; 
+            font-size:15px; 
+            letter-spacing:0.10em;
+            color: #898383;
+         }
+
+         .ui6{
+            font-family:open sans,sans-serif; 
+            font-size:20px; 
+            letter-spacing:0.10em;
+            color: #898383;
+         }
+         .ui4{
+            font-family:open sans,sans-serif; 
+            font-weight:bold; 
+            font-size:16px; 
+            letter-spacing:0.1em;
+            color: #D10AB3;
+            text-transform: uppercase;
+         }
+
+         .btn1{
+            background-color: #D10AB3;
+         }
+
+         .ui7{
+            font-size:28px;
+            letter-spacing:0.15em;
+            font-weight:bold;
+            color:#000000;
+            font-family:open sans,sans-serif;font-size:28px;
+         }
+
+         .ui8{
+            font-size:50px;
+            letter-spacing:0.15em;
+            font-weight:bold;
+            color:#D10AB3;
+            font-family:open sans,sans-serif;
+            text-transform: uppercase;
+         }
+
+         .ui9{
+            font-size:50px;
+            letter-spacing:0.15em;
+            font-weight:bold;
+            font-family:open sans,sans-serif;
+            text-transform: uppercase;
+         }
+        
+}

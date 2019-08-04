@@ -1,0 +1,12 @@
+<div class="tileContainer"  (mouseover)="hover()" (mouseout)="hoverOff()">
+  <img *ngIf="isSrcValid()" [src]="src" [alt]="text" class="tile" [ngClass]="{tileHover:isHovered }">
+  <div class="tile tileHover square" *ngIf="!isSrcValid()"></div>
+  <div class="middle" [ngClass]="{middleHover:(isHovered || !isSrcValid()) }">
+    <div class="text" *ngIf="isSrcValid()">
+      {{text}}
+    </div>
+    <div class="text" *ngIf="!isSrcValid()">
+        {{noSrcText}}
+      </div>
+  </div>
+</div>

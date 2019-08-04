@@ -1,0 +1,10 @@
+<ion-header>
+    <pyper-navbar [isLoggedIn]="true"></pyper-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- TODO Move style to .scss -->
+    <ag-grid-angular id="campaign-grid" class="ag-theme-balham"        
+    [gridOptions]="gridOptions">
+    </ag-grid-angular>
+</ion-content>
